@@ -1,0 +1,14 @@
+part,id,name,task,setting,val_loss,val_bpc,accuracy,f1,params_m,ms_per_sentence,device,time_min
+minigpt,minigpt_v1,baseline,language-modeling,"vocab=16000, ctx=64, layers=4, heads=4, embed=128, iters=8000",5.3341,2.1298,,,4.912,,,5.9
+minigpt,minigpt_v2,vocab5000,language-modeling,"vocab=5000, ctx=64, layers=4, heads=4, embed=128, iters=8000",4.5512,2.2399,,,2.085,,,3.1
+minigpt,minigpt_v3,ctx128,language-modeling,"vocab=16000, ctx=128, layers=4, heads=4, embed=128, iters=8000",5.18,2.0682,,,4.92,,,12.1
+minigpt,minigpt_v4,layers8,language-modeling,"vocab=16000, ctx=64, layers=8, heads=4, embed=128, iters=8000",5.1519,2.057,,,5.704,,,7.8
+model_comparison,lxyuan/distilbert-base-multilingual-cased-sentiments-student,distilbert-multilingual,sentiment-analysis,default (поріг 0.5),,,0.6,0.3333,135.3,6.1,GPU,
+model_comparison,cardiffnlp/twitter-xlm-roberta-base-sentiment-multilingual,xlm-roberta (twitter),sentiment-analysis,default (поріг 0.5),,,0.9,0.9091,278.0,11.5,GPU,
+model_comparison,nlptown/bert-base-multilingual-uncased-sentiment,bert-multilingual (stars),sentiment-analysis,default (поріг 0.5),,,0.75,0.7059,167.4,11.0,GPU,
+settings_experiment,cardiffnlp/twitter-xlm-roberta-base-sentiment-multilingual,xlm-roberta (twitter),sentiment-analysis,default (поріг 0.5),,,0.9,0.9091,,,,
+settings_experiment,cardiffnlp/twitter-xlm-roberta-base-sentiment-multilingual,xlm-roberta (twitter),sentiment-analysis,поріг P(pos) = 0.3,,,0.9,0.9091,,,,
+settings_experiment,cardiffnlp/twitter-xlm-roberta-base-sentiment-multilingual,xlm-roberta (twitter),sentiment-analysis,поріг P(pos) = 0.7,,,0.9,0.9091,,,,
+settings_experiment,cardiffnlp/twitter-xlm-roberta-base-sentiment-multilingual,xlm-roberta (twitter),sentiment-analysis,вхід: нижній регістр,,,0.9,0.9091,,,,
+settings_experiment,cardiffnlp/twitter-xlm-roberta-base-sentiment-multilingual,xlm-roberta (twitter),sentiment-analysis,вхід: без пунктуації,,,0.85,0.8571,,,,
+settings_experiment,cardiffnlp/twitter-xlm-roberta-base-sentiment-multilingual,xlm-roberta (twitter),sentiment-analysis,вхід: префікс «Відгук: »,,,0.9,0.9091,,,,
